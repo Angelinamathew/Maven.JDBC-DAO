@@ -1,0 +1,8 @@
+CREATE TABLE cars (
+    id int NOT NULL AUTO_INCREMENT,
+    make varchar(255),
+    model varchar(255),
+    yearOfModel int,
+    color varchar(255),
+    PRIMARY KEY (id)
+);
