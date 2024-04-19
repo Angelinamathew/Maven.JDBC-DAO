@@ -49,7 +49,7 @@ public class carDAO implements CarInterface{
     }
 
     @Override
-    public boolean update(Car car) {
+    public Car update(Car car) {
 
         Connection connection = ConnectionFactory.getConnection();
         try {
@@ -63,13 +63,13 @@ public class carDAO implements CarInterface{
             int i = ps.executeUpdate();
 
             if(i == 1) {
-                return true;
+                return findById(car.getId());
             }
 
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        return false;
+        return null;
 
     }
 

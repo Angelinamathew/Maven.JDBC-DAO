@@ -6,3 +6,9 @@ CREATE TABLE cars (
     color varchar(255),
     PRIMARY KEY (id)
 );
+INSERT INTO cars (make, model, yearOfModel, color)
+    VALUES ('Toyota', 'Corolla', 2020, 'Blue'),
+           ('Honda', 'Civic', 2018, 'Red'),
+           ('Ford', 'Mustang', 2022, 'Black'),
+           ('Chevrolet', 'Camaro', 2021, 'Yellow'),
+           ('BMW', 'X5', 2019, 'White');

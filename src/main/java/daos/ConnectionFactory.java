@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConnectionFactory {
-    public static final String URL = "jdbc:mysql://localhost:3306/car";
+    public static final String URL = "jdbc:mysql://localhost:3306/car?autoReconnect=true&useSSL=false";
     public static final String USER = "angelina";
     public static final String PASSWORD = "Ammu";
 
