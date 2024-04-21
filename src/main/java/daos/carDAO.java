@@ -54,15 +54,15 @@ public class carDAO implements CarInterface{
         Connection connection = ConnectionFactory.getConnection();
         try {
             PreparedStatement ps = connection.prepareStatement("UPDATE cars SET make=?, model=?, yearOfModel=?, color=? WHERE id=?");
-            ps.setInt(1,car.getId());
-            ps.setString(2, car.getMake());
-            ps.setString(3, car.getModel());
-            ps.setInt(4, car.getYearOfModel());
-            ps.setString(5, car.getColor());
+            ps.setString(1, car.getMake());
+            ps.setString(2, car.getModel());
+            ps.setInt(3, car.getYearOfModel());
+            ps.setString(4, car.getColor());
+            ps.setInt(5, car.getId());
 
             int i = ps.executeUpdate();
 
-            if(i == 1) {
+            if (i == 1) {
                 return findById(car.getId());
             }
 
@@ -97,10 +97,11 @@ public class carDAO implements CarInterface{
 
     @Override
     public boolean delete(int id) {
+
         Connection connection = ConnectionFactory.getConnection();
         try {
             Statement stmt = connection.createStatement();
-            int i = stmt.executeUpdate("DELETE FROM user WHERE id=" + id);
+            int i = stmt.executeUpdate("DELETE FROM cars WHERE id=" + id);
 
             if(i == 1) {
                 return true;

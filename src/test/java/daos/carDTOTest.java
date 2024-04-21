@@ -24,7 +24,7 @@ public class carDTOTest {
 
     @Test
     public void testUpdate() {
-        Car car = new Car(1, "Toyota", "Corolla", 2020, "Blue");
+        Car car = new Car(1, "Toyota", "Rav4", 2018, "Green");
         carDAO DAO = new carDAO();
         Car updated = DAO.update(car);
         Assert.assertEquals(updated.getYearOfModel(), car.getYearOfModel());
@@ -36,7 +36,12 @@ public class carDTOTest {
         carDAO DAO = new carDAO();
         DAO.create(car);
         Assert.assertEquals(1, DAO.findAll().size());
+    }
 
-
+    @Test
+    public void testDelete() {
+        carDAO DAO = new carDAO();
+        Assert.assertTrue(DAO.delete(1));
+        Assert.assertFalse(DAO.delete(2));
     }
 }
